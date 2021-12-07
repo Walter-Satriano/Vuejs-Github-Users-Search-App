@@ -3,7 +3,7 @@
     <input
       type="text"
       v-model="username"
-      placeholder="Github Username"
+      placeholder="GitHub Username"
       required
     />
     <button type="submit">Add Card</button>
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 import axios from 'axios'
 
 export default {
@@ -21,10 +20,16 @@ export default {
       username: '',
     }
   },
+  props: {
+    handleGitHubData: Function,
+  },
   methods: {
     addUser: function() {
-      alert(axios.get(`https://api.github.com/users/${this.username}`))
-    }
+      axios.get(`https://api.github.com/users/${this.username}`).then(resp => {
+        this.handleGitHubData(resp.data)
+        this.username = ''
+      })
+    },
   }
 }
 </script>
