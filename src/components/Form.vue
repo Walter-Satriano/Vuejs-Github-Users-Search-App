@@ -14,7 +14,7 @@
 import axios from 'axios'
 
 export default {
-  name: "Form",
+  name: 'Form',
   data: function() {
     return {
       username: '',
