@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Form />
+    <Form :handleGitHubData=handleGitHubData />
   </div>
 </template>
 
@@ -9,8 +9,18 @@ import Form from './components/Form.vue'
 
 export default {
   name: "App",
+  data: function() {
+    return {
+      cards: [],
+    }
+  },
   components: {
     Form,
+  },
+  methods: {
+    handleGitHubData(data) {
+      this.cards.push(data)
+    }
   }
 }
 </script>
