@@ -10,7 +10,7 @@ import Form from './components/Form.vue'
 import CardList from './components/CardList.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   data: function() {
     return {
       cards: [],
