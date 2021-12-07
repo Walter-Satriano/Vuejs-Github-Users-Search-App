@@ -11,6 +11,9 @@
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
   name: "Form",
   data: function() {
@@ -20,7 +23,7 @@ export default {
   },
   methods: {
     addUser: function() {
-      alert(this.username)
+      alert(axios.get(`https://api.github.com/users/${this.username}`))
     }
   }
 }
