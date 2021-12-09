@@ -24,6 +24,16 @@ export default {
     handleGitHubData(data) {
       this.cards.push(data)
     }
+  },
+  watch: {
+    cards() {
+      localStorage.setItem("cards", JSON.stringify(this.cards))
+    }
+  },
+  mounted() {
+    if(localStorage.getItem("cards")) {
+      this.cards = JSON.parse(localStorage.getItem("cards"))
+    }
   }
 }
 </script>
