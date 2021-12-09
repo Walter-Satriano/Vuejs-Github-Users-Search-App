@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card-list">
     <Card v-for="(card, index) in cards" :key="index"
       :avatar_url=card.avatar_url
       :name=card.name
@@ -25,3 +25,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+ .card-list {
+   display: flex;
+ }
+</style>
