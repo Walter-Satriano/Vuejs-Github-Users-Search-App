@@ -1,11 +1,13 @@
 <template>
   <div id="app">
+    <Header />
     <Form :handleGitHubData=handleGitHubData />
     <CardList :cards=cards v-on:deleteCard="deleteCard" />
   </div>
 </template>
 
 <script>
+import Header from './components/Header.vue'
 import Form from './components/Form.vue'
 import CardList from './components/CardList.vue'
 
@@ -17,6 +19,7 @@ export default {
     }
   },
   components: {
+    Header,
     Form,
     CardList,
   },
