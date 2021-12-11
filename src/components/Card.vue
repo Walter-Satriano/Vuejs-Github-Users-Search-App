@@ -9,6 +9,7 @@
       <p>Public Repository: {{public_repos}}</p>
       <p>Followers: {{followers}}</p>
     </div>
+    <button @click="deleteCard(index)">DELETE CARD</button>
   </div>
 </template>
 
@@ -22,7 +23,13 @@ export default {
     location: String,
     public_repos: Number,
     html_url: String,
-    followers: Number
+    followers: Number,
+    index: Number
+  },
+  methods: {
+    deleteCard(index) {
+      this.$emit('deleteCard', index)
+    }
   }
 }
 </script>

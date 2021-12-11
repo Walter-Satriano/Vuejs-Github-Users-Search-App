@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Form :handleGitHubData=handleGitHubData />
-    <CardList :cards=cards />
+    <CardList :cards=cards v-on:deleteCard="deleteCard" />
   </div>
 </template>
 
@@ -23,6 +23,12 @@ export default {
   methods: {
     handleGitHubData(data) {
       this.cards.push(data)
+    },
+    deleteCard(index) {
+      this.cards = this.cards
+        .slice(0, index)
+        .concat(this.cards.slice(index + 1, this.cards.length))
+        console.log(index);
     }
   },
   watch: {
