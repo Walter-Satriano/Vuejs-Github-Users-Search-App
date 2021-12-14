@@ -1,9 +1,8 @@
 <template>
-  <div class="card-list">
+  <div class="card-list-container">
     <Card v-for="(card, index) in cards" :key="index" v-on:deleteCard="deleteCard"
       :avatar_url=card.avatar_url
       :name=card.name
-      :blog=card.blog
       :location=card.location
       :public_repos=card.public_repos
       :html_url=card.html_url
@@ -32,8 +31,8 @@ export default {
 }
 </script>
 
-<style scoped>
- .card-list {
-   display: flex;
- }
+<style lang="scss" scoped>
+  .card-list-container {
+    margin-bottom: 8rem;
+  }
 </style>

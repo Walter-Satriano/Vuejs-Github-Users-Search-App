@@ -1,13 +1,13 @@
 <template>
-  <div class="searchbar">
+  <div class="searchbar my-5">
     <form @submit.prevent="addUser">
       <input
         type="text"
         v-model="username"
-        placeholder="GitHub Username"
+        placeholder="Insert GitHub Username"
         required
       />
-      <button type="submit">Add Card</button>
+      <button type="submit" class="mt-3 mt-sm-0 ms-3 text-white">Add Card</button>
     </form>
   </div>
 </template>
@@ -36,19 +36,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .searchbar {
     text-align: center;
-  }
+    font-family: 'Roboto', sans-serif;
 
-  .searchbar button {
-    margin-left: 15px;
-  }
+    button, input {
+      padding: 10px;
+      border-radius: 10px;
+      border-color: darkblue;
+      font-size: 25px;
+    }
 
-  .searchbar button, input {
-    margin-left: 15px;
-    font-size: 25px;
-    padding: 10px 15px;
-    border-radius: 15px;
+    button {
+      background-color: darkblue;
+
+      &:hover {
+        background-color: blue;
+      }
+    }
   }
 </style>

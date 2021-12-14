@@ -1,15 +1,14 @@
 <template>
-  <div class="card-container">
-    <img v-bind:src="avatar_url" alt="user-avatar">
+  <div class="card-container position-relative col-10 col-sm-10 col-md-5 col-lg-4 col-xl-4 mt-5 mx-lg-2">
+    <img class="w-75 mb-3" v-bind:src="avatar_url" alt="user-avatar">
     <div>
-      <h2 class="name">{{name}}</h2>
-      <p>Location: {{location}}</p>
-      <p>Blog: {{blog}}</p>
-      <p>GitHub URL:<br>{{html_url}}</p>
-      <p>Public Repository: {{public_repos}}</p>
-      <p>Followers: {{followers}}</p>
+      <h2 class="name mb-3">{{name}}</h2>
+      <p><strong>Location: </strong>{{location}}</p>
+      <p><strong>Public Repository: </strong>{{public_repos}}</p>
+      <p><strong>Followers: </strong>{{followers}}</p>
+      <a class="btn btn-info" :href="html_url" target="blank">SEE GITHUB PROFILE</a>
     </div>
-    <button @click="deleteCard(index)">DELETE CARD</button>
+    <div class="position-absolute top-0 end-0 mt-2 me-2" @click="deleteCard(index)"><i class="bi bi-x-lg fs-3"></i></div>
   </div>
 </template>
 
@@ -17,7 +16,6 @@
 export default {
   name: 'Card',
   props: {
-    blog: String,
     name: String,
     avatar_url: String,
     location: String,
@@ -34,19 +32,26 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card-container {
-  border: 2px solid black;
-  border-radius: 20px;
-  margin: 20px;
+  border-radius: 15px;
   padding: 25px;
   text-align: center;
-}
-.card-container img {
-  width: 200px;
-  border-radius: 50%;
-}
-.card-container .name {
-   font-weight: bold;
+  max-width: 350px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 12px 12px 5px lightgrey;
+
+  img {
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+
+  .name {
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 18px;
+  }
 }
 </style>
