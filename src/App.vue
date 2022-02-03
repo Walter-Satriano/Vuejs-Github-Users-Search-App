@@ -5,7 +5,6 @@
     <CardList :cards=cards v-on:deleteCard="deleteCard"
       class="d-flex flex-wrap justify-content-center justify-content-md-around"
     />
-    <Footer /> 
   </div>
 </template>
 
@@ -13,7 +12,6 @@
 import Header from './components/Header.vue'
 import Form from './components/Form.vue'
 import CardList from './components/CardList.vue'
-import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -26,7 +24,6 @@ export default {
     Header,
     Form,
     CardList,
-    Footer
   },
   methods: {
     handleGitHubData(data) {
